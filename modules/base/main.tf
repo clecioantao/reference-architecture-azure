@@ -8,6 +8,11 @@ resource "azuread_group" "cluster_admins" {
   display_name     = "Ref-Arch cluster admins"
   mail_enabled     = false
   security_enabled = true
+  mail_nickname    = "cluster-admins"
+
+  owners = [
+    "c1c93880-30e0-4211-a541-7afdc7235146" # Object ID do Service Principal
+  ]
 }
 
 data "azuread_client_config" "current" {}

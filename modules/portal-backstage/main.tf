@@ -20,7 +20,7 @@ locals {
 }
 
 module "portal_backstage" {
-  source = "github.com/humanitec-architecture/shared-terraform-modules?ref=v2024-06-12//modules/portal-backstage"
+  source = "git::https://github.com/humanitec-architecture/shared-terraform-modules.git//modules/portal-backstage?ref=v2024-06-12"
 
   cloud_provider = "azure"
 
@@ -49,7 +49,7 @@ locals {
 # in-cluster postgres
 
 module "backstage_postgres" {
-  source = "github.com/humanitec-architecture/resource-packs-in-cluster?ref=v2024-06-05//humanitec-resource-defs/postgres/basic"
+  source = "git::https://github.com/humanitec-architecture/resource-packs-in-cluster.git//humanitec-resource-defs/postgres/basic?ref=v2024-06-05"
 
   prefix = local.res_def_prefix
 }
